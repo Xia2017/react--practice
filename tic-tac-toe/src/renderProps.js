@@ -9,6 +9,7 @@
  */
 
 import React from 'react';
+import "./app.scss"
 
 class Mouse extends React.Component {
     constructor(props) {
@@ -38,7 +39,7 @@ class Cat extends React.Component {
         const mouse = this.props.mouse;
         console.log('mouse',mouse)
         return (
-            <div style={{width:'100px',height:'100px',background:'blue', position: 'absolute', left: mouse.x, top: mouse.y}}></div> 
+            <div className='moni-cat' style={{ left: mouse.x, top: mouse.y}}></div> 
         )
     }
 }

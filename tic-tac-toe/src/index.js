@@ -9,6 +9,16 @@ import ParentForm from './form';
 import Calculator from './liftingStateUp'
 import Welcom from './CompositionInheritance';
 import MouseTracker from './renderProps';
+// hook
+import Example from './hook/hook'
+import Timers from './hook/customHook';
+//redux
+import ReduxCounter from './redux/redux1'
+import store from "./redux/store";
+import { Provider } from "react-redux";
+
+
+
 
 
 class Square extends React.Component {// 受控组件（controlled components）
@@ -101,13 +111,13 @@ class Game extends React.Component {
          * 使用state ，每次state变化的时候，父组件的render都会被触发，但不是无差别render所有子组件，会更新需要变化的元素
          */
         this.setState(
-            {username:'yue'} 
+            { username: 'yue' }
         )
-        
+
     }
     logout() {
         this.setState(
-            {username:null}
+            { username: null }
         )
     }
 
@@ -133,50 +143,69 @@ class Game extends React.Component {
             status = 'Next player:' + (this.state.isNextStep ? 'X' : 'O');
         }
         return (
-            <div>
+            <Provider store={store}>
                 <div>
-                    <button onClick={this.login.bind(this)} >Login</button>
-                    <button onClick={this.logout.bind(this)} >Logout</button>
-                </div>
-                <div className="game">
-                    <div className="game-board">
-                        <Board
-                            squares={current.squares}
-                            onClick={(i) => this.handleClick(i)}
-                        />
+                    <div>
+                        <button onClick={this.login.bind(this)} >Login</button>
+                        <button onClick={this.logout.bind(this)} >Logout</button>
                     </div>
-                    <div className="game-info">
-                        <div>{status}</div>
-                        <ol>{moves}</ol>
+                    <div className="game">
+                        <div className="game-board">
+                            <Board
+                                squares={current.squares}
+                                onClick={(i) => this.handleClick(i)}
+                            />
+                        </div>
+                        <div className="game-info">
+                            <div>{status}</div>
+                            <ol>{moves}</ol>
+                        </div>
+                    </div>
+                    <div>
+                        <TestJSX name="test" />
+                    </div>
+                    <div>
+                        <TestComponent desc="you will learn moro about react component" />
+                    </div>
+                    <div>
+                        <Clock></Clock>
+                    </div>
+                    <div>
+                        <TestConditionalRendering user={this.state.username}></TestConditionalRendering>
+                    </div>
+                    <div>
+                        <ParentForm />
+                    </div>
+                    <div>
+                        状态提升
+                        <Calculator />
+                    </div>
+                    <div>
+                        组合
+                        <Welcom />
+                    </div>
+                    <div>
+                        <MouseTracker />
+                    </div>
+                    <div>
+                        hook
+                        <div>
+                            <Example />
+                        </div>
+                    </div>
+                    <div>
+                        customHook
+                        <div>
+                            <Timers />
+                        </div>
+                    </div>
+                    <div>
+                        redux counter
+                        <ReduxCounter />
                     </div>
                 </div>
-                <div>
-                    <TestJSX name="test" />
-                </div>
-                <div>
-                    <TestComponent desc="you will learn moro about react component" />
-                </div>
-                <div>
-                    <Clock></Clock>
-                </div>
-                <div>
-                    <TestConditionalRendering user={this.state.username}></TestConditionalRendering>
-                </div>
-                <div>
-                    <ParentForm/>
-                </div>
-                <div>
-                    状态提升
-                    <Calculator/>
-                </div>
-                <div>
-                    组合
-                    <Welcom/>
-                </div>
-                <div>
-                    <MouseTracker/>
-                </div>
-            </div>
+            </Provider>
+
 
 
         );
