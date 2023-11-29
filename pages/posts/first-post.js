@@ -1,3 +1,5 @@
+/**get data from local file by getStaticProps before component init */
+
 import Link from 'next/link';
 import { getSortedPostsData } from '../../lib/posts';
 import styles from './styles.module.scss';

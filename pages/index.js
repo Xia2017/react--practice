@@ -62,6 +62,10 @@ export default function Home() {
             <h3>Script Component &rarr;</h3>
             <p>load third party javascript</p>
           </Link>
+          <Link href={'/posts/second-post'} className={styles.card}>
+            <h3>Second Post  &rarr;</h3>
+            <p>load data from DB</p>
+          </Link>
         </div>
 
       </main>

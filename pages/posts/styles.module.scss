@@ -1,8 +1,15 @@
 .card {
+    margin-bottom: 20px;
     display: inline-block;
-    width: 49%;
-    margin-left: 0.5%;
+    width: 47%;
+    margin-left: 2%;
     border : solid 1px #efefef;
+    .content{
+        padding: 20px;
+        text-align: left;
+        font-weight: normal;
+        font-size: 13px;
+    }
     .title {
         display: inline-block;
         border-bottom: solid 1px #efefef;

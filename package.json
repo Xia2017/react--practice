@@ -6,14 +6,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
     "mongoose": "^7.6.2",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "clsx": "^2.0.0",
     "gray-matter": "^4.0.3",
     "sass": "^1.66.1"
-  }
+  },
+  "browser":{
+    "fs": false,
+    "os": false  }
 }
