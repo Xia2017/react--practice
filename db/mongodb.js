@@ -9,8 +9,6 @@ async function dbConnect() {
     if(!cached.promise) {
         const opts = {
             maxPoolSize: 10,
-            user:"yuexi",
-            pass:"yuexi",
             authSource:"admin"
           }
           cached.promise = mongoose.connect(process.env.NEXT_PUBLIC_MONGO_URL,opts).then(mongoose=>{
